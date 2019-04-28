@@ -1,0 +1,73 @@
+<!--*********************************************************************
+ VIEW - DISPLAY THE DATA FROM DATABASE
+ *********************************************************************-->
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="img"></div>
+    <div class="container">
+        <h1 class="display-3">Burrito Express</h1>
+        <p class="lead">For all your burrito consumption needs.</p>
+        <h2>Place Your Order</h2>
+        <!--PLACE ORDERS FORM-->
+        <form class="createForm">
+            <div class="input-group input-group-large">
+                <input type="text" id="addBurrito" name="name" class="pr-5 pl-2" placeholder="Enter burrito name">
+                <button type="submit" class="ml-2 btn btn-success">Place Order</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container mb-3">
+    <h1 class="text-center mb-3">Order Status</h1>
+    <div class="row">
+        <div class="col-lg-6">
+            <!--LEFT CARD-->
+            <div class="card mb-2">
+                <!--BEING PREPARED-->
+                <div class="card-header rightHeader">Being Prepared</div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {{#each burrito}}
+                        {{#unless this.devoured}}
+                        <li class="list-group-item">
+                            {{this.id}}:
+                            {{this.burrito_name}}
+                            <input type="hidden" name="devoured" value="true">
+                            <!--Moves items to pick up card-->
+                            <button class="btn btn-success changeDevour" type="submit" data-id="{{this.id}}"
+                                data-newDevoured="{{devour}}"><span><i class="far fa-check-square fa-lg"></i></span></button>
+                        </li>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    <!--RIGHT CARD-->
+        <div class="col-lg-6">
+            <div class="card">
+                <!--READY FOR PICK UP-->
+                <div class="card-header rightHeader">Ready for Pick Up</div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {{#each burrito}}
+                        {{#if this.devoured}}
+                        <li class="list-group-item">
+                            {{this.id}}:
+                            {{this.burrito_name}}
+                            <input type="hidden" name="devoured" value="false">
+                            <!--Delete Button-->
+                            <button type="button" class="deleteBurrito btn btn-danger" data-id="{{this.id}}"data-newDevoured="{{devour}}"><span><i class="fas fa-trash"></i></span></button>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--FOOTER-->
