@@ -2,6 +2,7 @@
 A burrito logger made with MySQL, Node, Express, Handlebars and ORM using MVC design patterns. 
 
 ## Website
+https://aqueous-plateau-41072.herokuapp.com/
 
 ## Technologies and Frameworks
 * HTML 5
@@ -55,4 +56,3 @@ db/seeds.sql
 
 ## License
 MIT
-

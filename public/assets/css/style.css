@@ -15,7 +15,7 @@ html, body {
   margin-bottom: 0px;
   opacity: 0.3;
   color: #fff;
-  background-image: url("assets/images/burritoBanner.jpg");
+  background-image: url("/assets/images/burritoBanner.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
