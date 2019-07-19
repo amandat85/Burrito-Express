@@ -4,6 +4,9 @@ A burrito logger made with MySQL, Node, Express, Handlebars and ORM using MVC de
 ## Website
 https://aqueous-plateau-41072.herokuapp.com/
 
+## Homework Instructions
+[Homework Details](homework_instructions.md)
+
 ## Technologies and Frameworks
 * HTML 5
 * CSS 3
